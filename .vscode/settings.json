@@ -1,0 +1,16 @@
+{
+    "yaml.schemas": {
+        "https://raw.githubusercontent.com/Icikowski/vanitygen/main/config.schema.json": [
+            "examples/*",
+        ]
+    },
+    "json.schemas": [
+        {
+            "fileMatch": [
+                "examples/*"
+            ],
+            "url": "https://raw.githubusercontent.com/Icikowski/vanitygen/main/config.schema.json",
+            "schema": true
+        }
+    ]
+}
