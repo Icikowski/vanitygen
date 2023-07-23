@@ -1,0 +1,56 @@
+{{ define "pkg" -}}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>{{ .Global.Domain }}/{{ .Package.Name }}</title>
+        <meta name="go-import" content="{{ .Meta.GetGoImportTag }}">
+        <meta name="go-source" content="{{ .Meta.GetGoSourceTag }}">
+        <style>
+        * { font-family: sans-serif; }
+        body { margin-top: 0; }
+        .content { display: inline-block; }
+        code { display: block; font-family: monospace; font-size: 1em; background-color: #d5d5d5; padding: 1em; margin-bottom: 16px; }
+        ul { margin-top: 16px; margin-bottom: 16px; }
+        </style>
+    </head>
+    <body>
+        <div class="content">
+            <h2>{{ .Global.Domain }}/{{ .Package.Name }}</h2>
+            <code>go get {{ .Global.Domain }}/{{ .Package.Name }}</code>
+            <code>import "{{ .Global.Domain }}/{{ .Package.Name }}"</code>
+            Docs: <a href="{{ .Global.DocsURL }}/{{ .Global.Domain }}/{{ .Package.Name }}">{{ .Global.DocsURL }}/{{ .Global.Domain }}/{{ .Package.Name }}</a><br/>
+            Source: <a href="{{ .Package.RepositoryURL }}">{{ .Package.RepositoryURL }}</a><br/>
+            {{ if not (eq .Package.Website nil) -}}
+            Website: <a href="{{ .Package.Website }}">{{ .Package.Website }}</a><br/>
+            {{- end }}
+        </div>
+    </body>
+</html>
+{{- end }}
+
+{{ define "home" -}}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>{{ .Global.Domain }}</title>
+        <style>
+        * { font-family: sans-serif; }
+        body { margin-top: 0; }
+        .content { display: inline-block; }
+        ul { margin-top: 16px; margin-bottom: 16px; }
+        </style>
+    </head>
+    <body>
+        <div class="content">
+            <h2>{{ .Global.Domain }}</h2>
+            <ul>
+                {{ range .Packages -}}
+                <li><a href="/{{ .Name }}">{{ $.Global.Domain }}/{{ .Name }}</a></li>
+                {{- end }}
+            </ul>
+        </div>
+    </body>
+</html>
+{{- end }}
