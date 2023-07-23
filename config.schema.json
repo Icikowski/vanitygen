@@ -1,0 +1,76 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "type": "object",
+    "description": "vanitygen configuration file",
+    "properties": {
+        "domain": {
+            "type": "string",
+            "description": "Domain name (without http[s])"
+        },
+        "siteName": {
+            "type": "string",
+            "description": "Package site's name"
+        },
+        "author": {
+            "type": "string",
+            "description": "Package site's author name"
+        },
+        "docs": {
+            "type": "string",
+            "description": "Docs server URL",
+            "format": "uri",
+            "default": "https://pkg.go.dev"
+        },
+        "pkgs": {
+            "type": "array",
+            "description": "List of packages",
+            "minItems": 1,
+            "uniqueItems": true,
+            "items": {
+                "type": "object",
+                "description": "Package definition",
+                "properties": {
+                    "name": {
+                        "type": "string",
+                        "description": "Package name"
+                    },
+                    "provider": {
+                        "type": "string",
+                        "description": "Repository provider",
+                        "enum": [
+                            "gitea",
+                            "github",
+                            "gitlab"
+                        ]
+                    },
+                    "repoUrl": {
+                        "type": "string",
+                        "description": "Package repository URL",
+                        "format": "uri"
+                    },
+                    "branch": {
+                        "type": "string",
+                        "description": "Default branch name of package repository"
+                    },
+                    "website": {
+                        "type": "string",
+                        "description": "Package website",
+                        "format": "uri"
+                    }
+                },
+                "required": [
+                    "name",
+                    "provider",
+                    "repoUrl",
+                    "branch"
+                ]
+            }
+        }
+    },
+    "required": [
+        "domain",
+        "siteName",
+        "author",
+        "pkgs"
+    ]
+}
