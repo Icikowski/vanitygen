@@ -24,7 +24,9 @@ const (
 var args config.Arguments
 
 func init() {
-	if err := env.Parse(&args); err != nil {
+	if err := env.ParseWithOptions(&args, env.Options{
+		Prefix: "VANITYGEN_",
+	}); err != nil {
 		log.Fatal(err)
 	}
 
