@@ -1,0 +1,28 @@
+{
+    "$schema": "https://raw.githubusercontent.com/Icikowski/vanitygen/main/config.schema.json",
+    "domain": "pkg.somesite.com",
+    "siteName": "Go packages",
+    "author": "John Doe",
+    "docs": "https://pkg.go.dev",
+    "pkgs": [
+      {
+        "name": "utils",
+        "provider": "github",
+        "repoUrl": "https://github.com/someuser/someutils",
+        "branch": "main"
+      },
+      {
+        "name": "tools",
+        "provider": "gitlab",
+        "repoUrl": "https://gitlab.com/someuser/sometools",
+        "branch": "devel"
+      },
+      {
+        "name": "awesome",
+        "provider": "gitea",
+        "repoUrl": "https://try.gitea.io/someuser/some-awesome-package",
+        "branch": "staging",
+        "website": "https://somesite.com/my-awesome-package"
+      }
+    ]
+  }
