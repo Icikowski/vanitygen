@@ -23,6 +23,12 @@
         "repoUrl": "https://try.gitea.io/someuser/some-awesome-package",
         "branch": "staging",
         "website": "https://somesite.com/my-awesome-package"
+      },
+      {
+        "name": "others",
+        "provider": "sourcehut",
+        "repoUrl": "https://git.sr.ht/~someuser/someotherpackage",
+        "branch": "master"
       }
     ]
   }

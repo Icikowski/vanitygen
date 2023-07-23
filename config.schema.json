@@ -40,7 +40,8 @@
                         "enum": [
                             "gitea",
                             "github",
-                            "gitlab"
+                            "gitlab",
+                            "sourcehut"
                         ]
                     },
                     "repoUrl": {

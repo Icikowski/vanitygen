@@ -8,9 +8,10 @@ import (
 )
 
 var all map[string]providerGenerator = map[string]providerGenerator{
-	constants.ProviderGitea:  newGiteaProvider,
-	constants.ProviderGitHub: newGithubProvider,
-	constants.ProviderGitLab: newGitlabProvider,
+	constants.ProviderGitea:     newGiteaProvider,
+	constants.ProviderGitHub:    newGithubProvider,
+	constants.ProviderGitLab:    newGitlabProvider,
+	constants.ProviderSourcehut: newSourcehutProvider,
 }
 
 func New(domain string, pkg config.Package) (Provider, error) {
