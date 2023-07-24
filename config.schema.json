@@ -57,6 +57,16 @@
                         "type": "string",
                         "description": "Package website",
                         "format": "uri"
+                    },
+                    "subpackages": {
+                        "type": "array",
+                        "description": "Subpackages of package (optional)",
+                        "items": {
+                            "type": "string",
+                            "description": "Subpackage name"
+                        },
+                        "uniqueItems": true,
+                        "default": null
                     }
                 },
                 "required": [

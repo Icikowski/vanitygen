@@ -46,6 +46,10 @@ pkgs:
     provider: github
     repoUrl: "https://github.com/someuser/someutils"
     branch: main
+    subpackages:
+      - v1
+      - v2
+      - v3
   - name: tools
     provider: gitlab
     repoUrl: "https://gitlab.com/someuser/sometools"
@@ -77,7 +81,12 @@ pkgs:
       "name": "utils",
       "provider": "github",
       "repoUrl": "https://github.com/someuser/someutils",
-      "branch": "main"
+      "branch": "main",
+      "subpackages": [
+        "v1",
+        "v2",
+        "v3"
+      ]
     },
     {
       "name": "tools",

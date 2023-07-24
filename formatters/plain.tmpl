@@ -48,6 +48,10 @@
             <ul>
                 {{ range .Packages -}}
                 <li><a href="/{{ .Name }}">{{ $.Global.Domain }}/{{ .Name }}</a></li>
+                {{ $pkg := . }}
+                {{ range .Subpackages -}}
+                <li><a href="/{{ $pkg.Name }}/{{ . }}">{{ $.Global.Domain }}/{{ $pkg.Name }}/{{ . }}</a></li>
+                {{- end }}
                 {{- end }}
             </ul>
         </div>

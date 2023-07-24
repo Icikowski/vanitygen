@@ -80,6 +80,14 @@ func main() {
 		return strings.Compare(cfg.Packages[i].Name, cfg.Packages[j].Name) < 0
 	})
 
+	for n := range cfg.Packages {
+		if cfg.Packages[n].Subpackages != nil {
+			sort.SliceStable(cfg.Packages[n].Subpackages, func(i, j int) bool {
+				return strings.Compare(cfg.Packages[n].Subpackages[i], cfg.Packages[n].Subpackages[j]) < 0
+			})
+		}
+	}
+
 	for _, pkg := range cfg.Packages {
 		target := path.Join(args.Output, pkg.Name, indexFile)
 
@@ -89,7 +97,7 @@ func main() {
 			log.Fatal(errors.Wrap(err, "unable to create package output directory"))
 		}
 
-		out, err := formatter.EncodePackage(pkg)
+		out, subsOut, err := formatter.EncodePackage(pkg)
 		if err != nil {
 			log.Fatal(errors.Wrap(err, "unable to encode package"))
 		}
@@ -102,6 +110,25 @@ func main() {
 
 		if _, err := f.Write(out); err != nil {
 			log.Panic(errors.Wrapf(err, "unable to write package index '%s'", target))
+		}
+
+		for subName, subOut := range subsOut {
+			subTarget := path.Join(args.Output, pkg.Name, subName, indexFile)
+			log.Printf("building index for subpackage '%s' of '%s' in '%s'", subName, pkg.Name, subTarget)
+
+			if err := os.Mkdir(path.Dir(subTarget), 0755); err != nil && !os.IsExist(err) {
+				log.Fatal(errors.Wrap(err, "unable to create package output directory"))
+			}
+
+			f, err := os.Create(subTarget)
+			if err != nil {
+				log.Panic(errors.Wrapf(err, "unable to create subpackage index '%s'", subTarget))
+			}
+			defer f.Close()
+
+			if _, err := f.Write(subOut); err != nil {
+				log.Panic(errors.Wrapf(err, "unable to write subpackage index '%s'", subTarget))
+			}
 		}
 	}
 

@@ -137,6 +137,10 @@
                 <div class="list-group">
                     {{ range .Packages -}}
                     <a href="/{{ .Name }}" class="list-group-item list-group-item-action">{{ $.Global.Domain }}/<strong>{{ .Name }}</strong></a>
+					{{ $pkg := . }}
+					{{ range .Subpackages -}}
+					<a href="/{{ $pkg.Name }}/{{ . }}" class="list-group-item list-group-item-action">{{ $.Global.Domain }}/<strong>{{ $pkg.Name }}</strong>/{{ . }}</a>
+					{{- end }}
                     {{- end }}
 				</div>
 		</main>

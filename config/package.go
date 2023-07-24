@@ -10,11 +10,12 @@ import (
 )
 
 type Package struct {
-	Name          string  `json:"name" yaml:"name"`
-	Provider      string  `json:"provider" yaml:"provider"`
-	RepositoryURL string  `json:"repoUrl" yaml:"repoUrl"`
-	Branch        string  `json:"branch" yaml:"branch"`
-	Website       *string `json:"website,omitempty" yaml:"website,omitempty"`
+	Name          string   `json:"name" yaml:"name"`
+	Provider      string   `json:"provider" yaml:"provider"`
+	RepositoryURL string   `json:"repoUrl" yaml:"repoUrl"`
+	Branch        string   `json:"branch" yaml:"branch"`
+	Website       *string  `json:"website,omitempty" yaml:"website,omitempty"`
+	Subpackages   []string `json:"subpackages,omitempty" yaml:"subpackages,omitempty"`
 }
 
 func (p Package) Validate() error {
