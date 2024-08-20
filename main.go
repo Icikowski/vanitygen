@@ -72,7 +72,7 @@ func main() {
 		log.Fatal(errors.Wrap(err, "unable to instantiate formatter"))
 	}
 
-	if err := os.Mkdir(args.Output, 0755); err != nil && !os.IsExist(err) {
+	if err := os.MkdirAll(args.Output, 0755); err != nil && !os.IsExist(err) {
 		log.Fatal(errors.Wrap(err, "unable to create output directory"))
 	}
 
@@ -93,7 +93,7 @@ func main() {
 
 		log.Printf("building index for package '%s' in '%s'", pkg.Name, target)
 
-		if err := os.Mkdir(path.Dir(target), 0755); err != nil && !os.IsExist(err) {
+		if err := os.MkdirAll(path.Dir(target), 0755); err != nil && !os.IsExist(err) {
 			log.Fatal(errors.Wrap(err, "unable to create package output directory"))
 		}
 
@@ -116,7 +116,7 @@ func main() {
 			subTarget := path.Join(args.Output, pkg.Name, subName, indexFile)
 			log.Printf("building index for subpackage '%s' of '%s' in '%s'", subName, pkg.Name, subTarget)
 
-			if err := os.Mkdir(path.Dir(subTarget), 0755); err != nil && !os.IsExist(err) {
+			if err := os.MkdirAll(path.Dir(subTarget), 0755); err != nil && !os.IsExist(err) {
 				log.Fatal(errors.Wrap(err, "unable to create package output directory"))
 			}
 
