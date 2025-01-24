@@ -2,6 +2,11 @@
 
 **Static HTML generator for Go vanity import paths.**
 
+> **⚠️ Warning**
+>
+> This repository is hosted on _git.sr.ht_ and mirrored to GitHub.
+> You should always refer to _git.sr.ht_ version as the primary instance.
+
 ## Introduction
 
 **vanitygen** is a tool for generating static HTML files for Go vanity import paths. It is capable of accepting Git repositories hosted on GitHub, GitLab, Gitea and Sourcehut and generating static HTML files with plain (`vangen`-like) or Bootstrap-based styling.
@@ -11,7 +16,7 @@ Both providers and formatters can be easly extended, so don't hesitate to open i
 ## Installation
 
 ```bash
-go install github.com/Icikowski/vanitygen@latest
+go install git.sr.ht/~icikowski/vanitygen@latest
 ```
 
 ## Usage
@@ -28,7 +33,7 @@ go install github.com/Icikowski/vanitygen@latest
 
 Configuration file defines the generated files' content. It contains both global and package-specific fields.
  
-Schema for configuration file is available on [`https://raw.githubusercontent.com/Icikowski/vanitygen/main/config.schema.json`](config.schema.json).
+Schema for configuration file is available on [`https://git.sr.ht/~icikowski/vanitygen/blob/main/config.schema.json`](config.schema.json).
 
 Both [YAML](examples/vanitygen.yaml) and [JSON](examples/vanitygen.json) formats are supported.
 
@@ -36,7 +41,7 @@ Both [YAML](examples/vanitygen.yaml) and [JSON](examples/vanitygen.json) formats
 <summary>Example configuration in YAML format</summary>
 
 ```yaml
-# yaml-language-server: $schema=https://raw.githubusercontent.com/Icikowski/vanitygen/main/config.schema.json
+# yaml-language-server: $schema=https://git.sr.ht/~icikowski/vanitygen/blob/main/config.schema.json
 domain: "pkg.somesite.com"
 siteName: "Go packages"
 author: "John Doe"
@@ -71,7 +76,7 @@ pkgs:
 
 ```json
 {
-  "$schema": "https://raw.githubusercontent.com/Icikowski/vanitygen/main/config.schema.json",
+  "$schema": "https://git.sr.ht/~icikowski/vanitygen/blob/main/config.schema.json",
   "domain": "pkg.somesite.com",
   "siteName": "Go packages",
   "author": "John Doe",

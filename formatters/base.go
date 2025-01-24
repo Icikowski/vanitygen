@@ -5,8 +5,8 @@ import (
 	"html/template"
 	"io/fs"
 
-	"github.com/Icikowski/vanitygen/config"
-	"github.com/Icikowski/vanitygen/providers"
+	"git.sr.ht/~icikowski/vanitygen/config"
+	"git.sr.ht/~icikowski/vanitygen/providers"
 	"github.com/pkg/errors"
 )
 

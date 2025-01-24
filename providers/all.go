@@ -3,8 +3,8 @@ package providers
 import (
 	"fmt"
 
-	"github.com/Icikowski/vanitygen/config"
-	"github.com/Icikowski/vanitygen/constants"
+	"git.sr.ht/~icikowski/vanitygen/config"
+	"git.sr.ht/~icikowski/vanitygen/constants"
 )
 
 var all map[string]providerGenerator = map[string]providerGenerator{

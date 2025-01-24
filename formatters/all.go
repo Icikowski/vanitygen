@@ -4,7 +4,7 @@ import (
 	"embed"
 	"fmt"
 
-	"github.com/Icikowski/vanitygen/config"
+	"git.sr.ht/~icikowski/vanitygen/config"
 )
 
 var (

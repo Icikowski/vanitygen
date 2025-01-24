@@ -1,5 +1,5 @@
 {
-  "$schema": "https://raw.githubusercontent.com/Icikowski/vanitygen/main/config.schema.json",
+  "$schema": "https://git.sr.ht/~icikowski/vanitygen/blob/main/config.schema.json",
   "domain": "pkg.somesite.com",
   "siteName": "Go packages",
   "author": "John Doe",

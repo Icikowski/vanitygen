@@ -3,9 +3,9 @@ package formatters
 import (
 	"time"
 
-	"github.com/Icikowski/vanitygen/config"
-	"github.com/Icikowski/vanitygen/constants"
-	"github.com/Icikowski/vanitygen/providers"
+	"git.sr.ht/~icikowski/vanitygen/config"
+	"git.sr.ht/~icikowski/vanitygen/constants"
+	"git.sr.ht/~icikowski/vanitygen/providers"
 	"pkg.icikowski.pl/generics"
 )
 

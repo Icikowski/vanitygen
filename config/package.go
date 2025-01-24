@@ -6,7 +6,7 @@ import (
 
 	ghErrors "github.com/pkg/errors"
 
-	"github.com/Icikowski/vanitygen/constants"
+	"git.sr.ht/~icikowski/vanitygen/constants"
 )
 
 type Package struct {

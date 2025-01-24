@@ -3,7 +3,7 @@ package providers
 import (
 	"fmt"
 
-	"github.com/Icikowski/vanitygen/config"
+	"git.sr.ht/~icikowski/vanitygen/config"
 )
 
 type giteaProvider struct {

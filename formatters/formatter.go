@@ -1,7 +1,7 @@
 package formatters
 
 import (
-	"github.com/Icikowski/vanitygen/config"
+	"git.sr.ht/~icikowski/vanitygen/config"
 )
 
 type Formatter interface {

@@ -10,8 +10,8 @@ import (
 	"sort"
 	"strings"
 
-	"github.com/Icikowski/vanitygen/config"
-	"github.com/Icikowski/vanitygen/formatters"
+	"git.sr.ht/~icikowski/vanitygen/config"
+	"git.sr.ht/~icikowski/vanitygen/formatters"
 	"github.com/caarlos0/env/v9"
 	"github.com/pkg/errors"
 	"gopkg.in/yaml.v3"
